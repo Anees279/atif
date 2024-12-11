@@ -270,13 +270,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  color: white;
-  background-image: url(../img/6.jpg); /* Set the background image here */
-  background-size: cover; /* Ensures the image covers the entire section */
+  background-image: url(../img/ser.jpeg);
+  object-fit: contain; /* Ensures the image adjusts without cropping */
+  
+  background-size: 100% 100%; /* Stretch image to cover entire element */
   background-position: center center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   filter: blur(2px); /* Apply the blur effect */
-  z-index: -1; /* Send the pseudo-element behind the content */
+  z-index: -1; /* S
 }
 .services-heading {
   background-color: #f7f9fa;
@@ -322,7 +323,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../img/dubai2.jpg); /* Set the background image here */
+  background-image: url(../img/dubai2.jpg);
+  object-fit: contain; 
+  
   background-size: cover; /* Ensures the image covers the entire section */
   background-position: center center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -353,7 +356,7 @@ body {
   padding: 30px 0;
 }
 .bg-custom {
-  background: transparent; /* Initial gradient */
+  background: black; /* Initial gradient */
   border: 1px solid white;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -361,7 +364,7 @@ body {
   transition: background 0.3s ease, transform 0.3s ease; /* Transition for background and transform */
 }
 .service-item {
-  background: rgba(128, 128, 128, 0.5); /* Initial gradient */
+  background: rgba(30, 26, 26, 0.5); /* Initial gradient */
   transition: transform 0.1s ease !important, background 0.1s ease;
 }
 
