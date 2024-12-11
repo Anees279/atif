@@ -270,7 +270,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../img/ser.jpeg);
+  background-image: url(../img/dubai2.jpg);
   object-fit: contain; /* Ensures the image adjusts without cropping */
   
   background-size: 100% 100%; /* Stretch image to cover entire element */
