@@ -1,21 +1,4 @@
-const heading = document.querySelector(".animated-heading");
-const text = heading.textContent;
-heading.innerHTML = ""; // Clear original text
 
-// Wrap each character in a span
-text.split("").forEach((char, index) => {
-  const span = document.createElement("span");
-  span.textContent = char;
-
-  // Add a class for spaces to ensure proper spacing
-  if (char === " ") {
-    span.classList.add("space");
-  }
-
-  // Apply animation delay dynamically
-  span.style.animationDelay = `${index * 0.1}s`;
-  heading.appendChild(span);
-});
 // Initialize AOS
 document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
@@ -65,24 +48,7 @@ $(document).ready(function(){
   });
 });
 // testmonial
-$(document).ready(function () {
-  $('.testimonial-slider').slick({
-    slidesToShow: 3, // Show 3 testimonials on larger screens
-    slidesToScroll: 1,
-    autoplay: true, // Enable auto-slide
-    autoplaySpeed: 3000, // Change every 3 seconds
-    dots: true, // Enable dots for navigation
-    arrows: false, // Hide arrows
-    responsive: [
-      {
-        breakpoint: 768, // For tablets and smaller screens
-        settings: {
-          slidesToShow: 1 // Show only 1 testimonial
-        }
-      }
-    ]
-  });
-});
+
 // contact us
 function handleSubmit() {
   // Get form elements

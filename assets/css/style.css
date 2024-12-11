@@ -10,24 +10,16 @@ body {
   z-index: 1000;
   transition: background-color 0.3s ease; /* Smooth transition */
 }
-
-/* Semi-transparent state when scrolled */
-/* #navbar-container.scrolled {
-  background-color: rgba(248, 249, 250, 0.2);
-} */
-
 /* Navbar styling */
 .navbar {
   position: relative;
   z-index: 10;
 }
-
 .navbar-nav {
   opacity: 1;
   transform: translateX(0);
   transition: none;
 }
-
 .rotating-logo {
   width: 60px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
@@ -102,21 +94,25 @@ body {
   color: black;
 }
 /* Cart Preview (Navbar Hover) */
-
 .logo img {
   mix-blend-mode: multiply; /* or screen, depending on the effect */
 }
-
-
 .hero img {
-  height: 50vh;
-  width: 40vh;
-  object-fit: cover;
-  border-radius: 50%; /* Makes the image round */
+  width: 50vh; /* Automatically adjust the width */
+  height: 50vh; /* Limit the height to 50% of the viewport height */
+  object-fit: cover; /* Cover the area of the container, cropping the image */
+  object-position: top; 
+  border-radius: 50%; /* Keeps the image round */
+  display: block; /* Ensure proper alignment and spacing */
+  margin: 0 auto; 
+  /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+ opacity: .9;
 }
+
+
 .animated-heading {
   display: inline-block;
-  font-size: 2rem;
+  /* font-size: 5rem; */
   font-weight: bold;
 }
 
@@ -139,7 +135,7 @@ body {
 }
 .hero h1 {
   color: black;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-top: 10px;
 }
 .hero_1 {
@@ -180,10 +176,8 @@ body {
 .content {
   position: relative;
   z-index: 1;
-
   text-align: center;
 }
-
 .social-icon {
   display: inline-block;
   margin: 0 10px;
@@ -192,20 +186,16 @@ body {
   text-decoration: none;
   transition: transform 0.2s, color 0.3s;
 }
-
 .social-icon svg {
   fill: #666; /* Default icon color */
   transition: fill 0.3s;
 }
-
 .social-icon:hover {
   transform: translateY(-5px);
 }
-
 .facebook svg:hover {
   fill: #4267b2; /* Facebook Blue */
 }
-
 .instagram svg:hover {
   fill: #e4405f; /* Instagram Pinkish */
 }
@@ -213,13 +203,11 @@ body {
 .linkedin svg:hover {
   fill: black; /* LinkedIn Blue */
 }
-
 .twitter svg:hover {
   fill: #1da1f2; /* Twitter Blue */
 }
-
 .content {
-  /* background-color: #f7f9fa; */
+  
   border-radius: 10px;
   padding: 20px;
 }
@@ -227,7 +215,6 @@ body {
   overflow: hidden;
   white-space: nowrap;
   background-color: rgba(247, 249, 250, 0.5);
-
   border-radius: 10px;
   padding: 30px;
   height: 15vh;
@@ -235,18 +222,32 @@ body {
   margin-top: 70px;
   align-items: center;
   font-size: 2rem;
-
   box-sizing: border-box;
   width: 100%; /* Adjust width as needed */
 }
 
 .marquee p {
   display: inline-block;
-  animation: marquee 30s linear infinite; /* Duration and looping */
+  animation: marquee 60s linear infinite; /* Slower duration for smoother scrolling */
   white-space: nowrap;
   margin: 0; /* Remove default margin */
   padding: 0;
+  position: relative; /* Required for the initial position */
+  transform: translateX(100%); /* Ensure text starts just outside view */
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start just outside the right edge */
+  }
+  1% {
+    transform: translateX(99%); /* Small shift to ensure visibility on load */
+  }
+  100% {
+    transform: translateX(-100%); /* End outside the left edge */
+  }
+}
+
 .messaeg {
   background-color: rgba(247, 249, 250, 0.5);
   padding: 10px;
@@ -277,11 +278,9 @@ body {
   filter: blur(2px); /* Apply the blur effect */
   z-index: -1; /* Send the pseudo-element behind the content */
 }
-
 .services-heading {
   background-color: #f7f9fa;
   padding: 10px;
-  /* border-radius: 10px; */
   margin-top: 30px;
 }
 #services-heading .service-item {
@@ -316,7 +315,7 @@ body {
   margin-top: 30px;
   color: white;
 }
-#legal-services-pricing::before {
+#Companies::before {
   content: ""; /* Creates the pseudo-element */
   position: absolute;
   top: 0;
@@ -346,7 +345,6 @@ body {
     transform: translateX(-100%);
   }
 }
-
 .messaeg {
   overflow: hidden;
   height: auto;
@@ -354,9 +352,6 @@ body {
 #services {
   padding: 30px 0;
 }
-
-/* Background color for all service items */
-/* Define the initial background and transitions for .service-item */
 .bg-custom {
   background: transparent; /* Initial gradient */
   border: 1px solid white;
@@ -365,9 +360,6 @@ body {
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: background 0.3s ease, transform 0.3s ease; /* Transition for background and transform */
 }
-
-/* Additional transition on .service-item to handle hover effect */
-/* Ensure the transform is applied with !important to avoid AOS interference */
 .service-item {
   background: rgba(128, 128, 128, 0.5); /* Initial gradient */
   transition: transform 0.1s ease !important, background 0.1s ease;
@@ -379,9 +371,7 @@ body {
   color: #000;
   transform: scale(1.05) !important; /* Zoom-in effect with !important */
 }
-
 /* Ensure AOS does not interfere with the scaling */
-
 .service-item i {
   font-size: 20px;
 }
@@ -389,13 +379,12 @@ body {
   font-size: 15px;
 }
 .service-item {
-  max-height: 400px; /* Fixed height for consistent size */
+  /* max-height: 900px; Fixed height for consistent size */
   overflow: hidden; /* Hide overflow content */
   transition: max-height 0.5s ease;
   /* Smooth transition for expanding */
   position: relative;
 }
-
 .service-item a {
   color: white;
 }
@@ -426,13 +415,6 @@ body {
 .toggle-content:hover {
   text-decoration: underline;
 }
-
-/* legal services for bussines */
-
-.service-item h2 {
-  /* color: #007573; */
-}
-
 .service-item:hover h2,
 .service-item:hover i,
 .service-item:hover a {
@@ -450,33 +432,6 @@ body {
   z-index: 1; /* Ensure the hovered card is above others */
 }
 
-/* Style for stars */
-.testimonial-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 10px; /* Add margin for spacing between items */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-slider {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-.stars {
-  color: #ffc107;
-}
-
-.testimonial-item h5 {
-  margin-top: 10px;
-  font-weight: bold;
-}
-#offcanvasTop {
-  --bs-offcanvas-height: 80vh;
-  background-color: #c5e1d4;
-}
 .is-invalid {
   border: 2px solid red;
   border-radius: 4px;
@@ -485,10 +440,34 @@ body {
   background-color: #002b49;
   color: white;
 }
-/* Set up responsiveness */
-@media (max-width: 767px) {
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
 }
-
+a {
+  text-decoration: none; /* Removes the underline */
+}
+.services-slider img {
+  width: 50px; /* Set the width */
+  height: 50px; /* Set the height */
+  border-radius: 50%; /* Make the image round */
+  object-fit: contain; /* Ensure the entire image is visible without cropping */
+  display: block;
+  margin-bottom: 10px; /* Optional: Removes inline spacing issues */
+ 
+}
+.service-item {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Aligns items vertically */
+  align-items: center; /* Centers items horizontally */
+}
+.service-item img {
+  
+  
+  object-fit: contain; 
+  display: block;
+  margin-bottom: 10px;
+  
+}
 /* Mobile device adjustments */
 @media (max-width: 768px) {
   .navbar-nav {
@@ -520,6 +499,18 @@ body {
     display: inline-block;
     /* justify-content: center; */
   }
+  .row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+  .hero h1 {
+    color: black;
+    font-size: 1.9rem;
+    margin-top: 10px;
+}
+.content {
+  border-radius: 10px;
+  padding: 11px;
+}
 }
 
 @media (max-width: 1200px) {
@@ -528,14 +519,39 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-}
+
 
 @media (max-width: 576px) {
   .row {
     grid-template-columns: 1fr; /* 1 column on small screens */
   }
+  
 }
+/* Base styles remain unchanged for small devices */
+
+/* Adjust layout for larger devices */
+@media (min-width: 768px) {
+  .hero .row {
+    flex-direction: row-reverse; /* Switch the order of hero_1 and hero_2 for large devices */
+  }
+  .hero_1 {
+    text-align: left; /* Align text to the left for consistency with hero_2 */
+    padding-right: 5rem; /* Add spacing for better layout */
+  }
+  .hero_2 {
+    padding-left: 5rem; /* Add spacing for better layout */
+  }
+  .service-item img {
+
+    object-fit: contain; 
+    display: block;
+    margin-bottom: 10px;
+    
+  }
+  .service-item img {
+    max-width: 100%; /* Make sure the image doesn't overflow */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+}
+
